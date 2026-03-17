@@ -1,10 +1,14 @@
 public class HelloApp {
     public static void main(String[] args) {
-        // Check if command-line argument is provided, else default to "World"
-        String name = (args.length > 0) ? args[0] : "World";
-
-        // Display personalized greeting
-        System.out.println("Hello, " + name + "!");
+        // Check if any command-line arguments are provided
+        if (args.length == 0) {
+            // No arguments provided, use default "World"
+            System.out.println("Hello, World!");
+        } else {
+            // Loop through all arguments and print greeting for each name
+            for (int i = 0; i < args.length; i++) {
+                System.out.println("Hello, " + args[i] + "!");
+            }
+        }
     }
 }
-

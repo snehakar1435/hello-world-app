@@ -1,14 +1,22 @@
 public class HelloApp {
     public static void main(String[] args) {
-        // Check if any command-line arguments are provided
+        // Check if no arguments are provided
         if (args.length == 0) {
-            // No arguments provided, use default "World"
+            // Default greeting when no arguments given
             System.out.println("Hello, World!");
         } else {
-            // Loop through all arguments and print greeting for each name
-            for (int i = 0; i < args.length; i++) {
-                System.out.println("Hello, " + args[i] + "!");
+            // Use StringBuilder to build comma-separated names
+            StringBuilder names = new StringBuilder();
+            // Enhanced for loop to iterate through all arguments
+            for (String name : args) {
+                // Add comma only if names already has content
+                if (names.length() > 0) {
+                    names.append(", ");
+                }
+                names.append(name);
             }
+            // Display greeting with all names
+            System.out.println("Hello, " + names + "!");
         }
     }
 }

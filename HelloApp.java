@@ -1,11 +1,15 @@
+
 public class HelloApp {
     public static void main(String[] args) {
-        String greeting;
+        // Check if no arguments are provided
         if (args.length == 0) {
-            greeting = "Hello, World!";
+            // Default greeting when no arguments given
+            System.out.println("Hello, World!");
         } else {
-            greeting = "Hello, " + String.join(", ", args) + "!";
+            // Use String.join() to concatenate all names with ", " delimiter
+            String names = String.join(", ", args);
+            // Display greeting with all names
+            System.out.println("Hello, " + names + "!");
         }
-        System.out.println(greeting);
     }
 }
